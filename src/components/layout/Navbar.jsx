@@ -2,33 +2,32 @@ import { NAV_LINKS } from "../../utils/constants";
 
 function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/5 border-b border-white/10">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <header className="fixed top-0 left-0 w-full z-50">
+      <nav className="mx-auto mt-5 flex w-[92%] max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-6 py-4 backdrop-blur-xl">
 
         {/* Logo */}
-        <h1 className="text-2xl font-bold tracking-wide text-white">
-          Jai<span className="text-blue-500">.</span>
+        <h1 className="font-['Space_Grotesk'] text-2xl font-bold tracking-wide">
+          JB<span className="text-sky-400">.</span>
         </h1>
 
-        {/* Navigation */}
-        <ul className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((item) => (
+        {/* Desktop Navigation */}
+        <ul className="hidden items-center gap-8 md:flex">
+          {NAV_LINKS.map((link) => (
             <li
-              key={item}
-              className="text-gray-300 hover:text-white transition-colors duration-300 cursor-pointer"
+              key={link.id}
+              className="cursor-pointer text-slate-300 transition duration-300 hover:text-sky-400"
             >
-              {item}
+              {link.title}
             </li>
           ))}
         </ul>
 
         {/* Resume Button */}
-        <button className="hidden md:block bg-blue-600 hover:bg-blue-700 transition-all duration-300 px-5 py-2 rounded-full text-white font-medium">
+        <button className="hidden rounded-full bg-sky-500 px-5 py-2 font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-sky-400 md:block">
           Resume
         </button>
-
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
 
